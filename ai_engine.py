@@ -36,33 +36,39 @@ INSTRUCTIONS:
   - If no relevant image is found for an observation where one is expected, mention "Image Not Available".
 
 OUTPUT STRUCTURE REQUIRED:
-The final markdown output MUST strictly follow this structure:
+The final markdown output MUST strictly follow this structure exactly, including the bolded headers and the table-like styling for severity:
 
-# Detailed Diagnostic Report (DDR)
+# Detailed Diagnosis Report
 
 ## 1. Property Issue Summary
-[Summary of the main cumulative issues found]
+[Brief summary of the main cumulative issues found, describing the condition and the area of concern]
 
 ## 2. Area-wise Observations
-[List observations area by area, combining both visual and thermal findings. Embed relevant images here.]
+[List observations area by area, combining both visual and thermal findings. Embed relevant images here directly under each point to serve as photographic proof.]
+
 Example: 
-### Roof Area
-- Visual: Water pooling observed.
-- Thermal: Sub-surface moisture detected (-2.4 Celsius anomaly).
+### [Location Name - e.g. Roof Area]
+**Visual Observations:**
+- Water pooling observed.
+- Membrane appears cracked.
 [[IMAGE: inspection_page2_1.png]]
+
+**Thermal Observations:**
+- Sub-surface moisture detected (-2.4 Celsius anomaly).
 [[IMAGE: thermal_page1_2.png]]
 
 ## 3. Probable Root Cause
 [Synthesis of what is likely causing the observed issues]
 
 ## 4. Severity Assessment
-[High/Medium/Low with reasoning based on the findings]
+**Status / Severity Level**: [High / Medium / Low]  
+**Reasoning**: [Reasoning based on the findings]
 
 ## 5. Recommended Actions
-[Client-friendly list of next steps to remediate the issues]
+[Client-friendly list of next steps to remediate the issues, bulleted]
 
 ## 6. Additional Notes
-[Any other relevant facts or disclaimers]
+[Any other relevant facts, disclaimers, or limitations of the report]
 
 ## 7. Missing or Unclear Information
 [Explicitly list what was not covered or unclear. If there is nothing missing, write "None Noted"]
