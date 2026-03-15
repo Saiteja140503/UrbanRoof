@@ -11,11 +11,11 @@ This project was built to test applied reasoning, multimodal data integration, f
 The system is built on a Python backend and presented through a **Streamlit** user interface. It utilizes **PyMuPDF** for data extraction and **Google Gemini (2.5-Flash)** for multimodal reasoning.
 
 1. **Document Ingestion (`app.py`)**: Users upload the Visual Inspection PDF and the Thermal Scan PDF via the Streamlit UI. 
-2. **Multimodal Extraction (`pdf_processor.py`)**: 
+2. **Multimodal Extraction (`scripts/pdf_processor.py`)**: 
    - `PyMuPDF` parses the raw textual data and page context.
    - It also performs granular extraction of the embedded images themselves. 
    - *Optimization safeguard*: The extraction logic utilizes `Pillow (PIL)` to ignore micro-icons and compress massively high-resolution images down to < 800px. It implements a hard-cap limit to prevent API payload explosion (e.g. 5,400+ hidden thermal points natively embedded in PDF layers).
-3. **AI Reasoning Engine (`ai_engine.py`)**: 
+3. **AI Reasoning Engine (`scripts/ai_engine.py`)**: 
    - The system passes the text and the Base64-encoded image bytes directly into the `gemini-2.5-flash` multimodal context window.
    - Using strict System Prompting, Gemini analyzes the visual observations and correlates them physically with the thermal anomalies.
    - Output constraints force the model to render a strict 7-section markdown structure matching the exact presentation of a professional DDR, including replacing the image references with explicit structural tags (e.g. `[[IMAGE: <key>]]`).

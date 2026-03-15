@@ -1,8 +1,8 @@
 import streamlit as st
 import os
 import base64
-from pdf_processor import extract_text_from_pdf, extract_images_from_pdf
-from ai_engine import generate_ddr_report
+from scripts.pdf_processor import extract_text_from_pdf, extract_images_from_pdf
+from scripts.ai_engine import generate_ddr_report
 from dotenv import load_dotenv
 
 load_dotenv()
