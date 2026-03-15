@@ -20,7 +20,6 @@ The system is built on a Python backend and presented through a **Streamlit** us
    - Using strict System Prompting, Gemini analyzes the visual observations and correlates them physically with the thermal anomalies.
    - Output constraints force the model to render a strict 7-section markdown structure matching the exact presentation of a professional DDR, including replacing the image references with explicit structural tags (e.g. `[[IMAGE: <key>]]`).
 4. **Dynamic Output Rendering (`app.py`)**: Streamlit parses the AI's structural tags and dynamically executes inline HTML / CSS to cleanly render the extracted Base64 images directly inside the final generated report, right beneath the observations they prove.
-5. **PDF Export (`create_final_pdf.py`)**: A standalone script using `ReportLab` that can convert the generated markdown/text output into a stylized `Final_DDR_Report.pdf` document.
 
 ---
 
@@ -66,6 +65,3 @@ The system is built on a Python backend and presented through a **Streamlit** us
 * **Logical Merging:** The prompt system links specific thermal anomalies (e.g. Sub-surface moisture) to the specific visual symptoms (e.g. Water pooling near HVAC) and places them under the exact same "Area-wise Observation" sub-header.
 * **Handling Conflict:** The system prompt instructs the AI to directly call out inconsistencies.
 * **System Thinking:** Image bytes are extracted gracefully via `Pillow`, sized for bandwidth limits, safely analyzed by an LLM visually, and systematically injected back into a Streamlit GUI bypassing Markdown injection limitations.
-
-## 📹 Demonstration
-A full video walkthrough of the logic, the file execution, and the final output is available in the repository as `Demo_Recording.zip`.
